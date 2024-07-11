@@ -2,9 +2,6 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/landingPage.module.css';
 import Carte from '../components/carteAccueil';
-// import BottlesList from '../components/BottleList';
-// import RemoveGas from '../components/removeGas';
-// import SearchBar from '../components/searchbar';
 
 export default function landingPage() {
   const images = [
