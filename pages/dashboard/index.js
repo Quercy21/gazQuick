@@ -11,7 +11,7 @@ export default function DashboardPage() {
         <Sidebar />
         <div className={styles.content}>
       <div className={styles.banner}>
-        <h1>Enjoy free home delivery in this summer</h1>
+        <h1>Enjoy free home delivery in this summer.</h1>
         <p>Designer Dresses - Pick from trendy Designer Dress.</p>
         <button> <a href='' >Get Started</a></button>
       </div>
