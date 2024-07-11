@@ -12,7 +12,7 @@ export const config = {
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const form = new formidable.IncomingForm();
+    const form = new formidable({});
 
     form.parse(req, async (err, fields, files) => {
       if (err) {
