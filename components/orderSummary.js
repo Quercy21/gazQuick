@@ -1,4 +1,3 @@
-// components/OrderSummary.js
 import styles from '../styles/orderSummary.module.css';
 
 export default function OrderSummary() {

@@ -1,4 +1,3 @@
-// components/Cart.js
 import CartItem from '../components/cartItem';
 import OrderSummary from '../components/orderSummary';
 import styles from '../styles/cartPages.module.css';

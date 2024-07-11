@@ -1,4 +1,3 @@
-// components/CartItem.js
 import styles from '../styles/cartItem.module.css';
 
 export default function CartItem() {
