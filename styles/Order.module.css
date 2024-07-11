@@ -1,0 +1,26 @@
+.orders {
+    margin-left: 270px; /* Adjusted for sidebar width */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* .orders table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .orders table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  .orders  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .orders th {
+    background-color: #f4f4f4;
+  } */
+  

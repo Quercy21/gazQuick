@@ -1,0 +1,114 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7fafc;
+}
+
+.container .title{
+  margin-right: 1000px;
+  color: #00676C;
+}
+
+.formContainer {
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 900px;
+}
+
+@media (min-width: 768px) {
+  .formContainer {
+    flex-direction: row;
+  }
+
+  .formContent {
+    width: 50%;
+    padding-right: 2rem;
+  }
+
+  .imageContainer {
+    display: block;
+    width: 50%;
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.inputContainer {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.inputLabel {
+  display: block;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.inputField {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.submitButton {
+  width: 100%;
+  background-color: #252B42;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.submitButton:hover {
+  background-color: #252B42;
+}
+
+.signupLink {
+  margin-top: 1rem;
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+.signupLink a {
+  color: #3182ce;
+  text-decoration: none;
+}
+
+.imageContainer {
+  display: none;
+}
+
+.image {
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .imageContainer {
+    display: block;
+  }
+}

@@ -1,0 +1,213 @@
+.container {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .header {
+    background: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00676C;
+  }
+  
+  .navLinks {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .navLinks li {
+    margin: 0 0.5rem;
+  }
+  
+  .navLinks a {
+    color: #000;
+  }
+  
+  .navIcons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .main {
+    padding: 2rem;
+  }
+  
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #042019;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    margin-left: 90px;
+    margin-right: 90px;
+  }
+  
+  .heroText {
+    max-width: 500px;
+    margin-left: 70px;
+  }
+
+  .heroText h1{
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Inter';
+    width: 506px;
+    height: 132px;
+    margin-bottom: 40px;
+    color: #00676C;
+  }
+
+  .heroText p{
+    font-size: 18px;
+    font-family: 'Inter';
+    width: 485px;
+    height: 66px;
+    margin-bottom: 40px;
+    color: #f9f9f9;
+  }
+  
+  .heroButton {
+    padding: 0.5rem 1rem;
+    background-color: #00676C;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .heroImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 70px;
+  }
+  
+  .partners, .delivery {
+    margin-bottom: 2rem;
+  }
+
+  .partners h2{
+    font-weight: bold;
+    font-family: 'Inter';
+    font-size: 30px;
+    text-align: center;
+    color: #00676C ;
+    margin-bottom: 50px;
+  }
+  
+  .partners h2 {
+    margin-bottom: 1rem;
+  }
+
+  .partnerLogos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid #D9D9D9;
+    width: 87%;
+    margin-left: 95px;
+  }
+  
+  .partnerLogos img {
+    max-width: 100px;
+    
+  }
+
+  .titre {
+    color: #00676C;
+    font-weight: bold;
+    font-family: 'Inter';
+    font-size: 20px;
+    margin-left: 90px;
+  }
+
+  .conteneur{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin-left: 80px;
+  }
+  
+  .delivery {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-left: 63%;
+    width: 30%;
+    margin-top: 50px;
+    /* text-align: center; */
+  }
+
+  .delivery h2{
+    font-weight: bold;
+    font-family: 'Inter';
+    font-size: 20px;
+    color: #00676C;
+  }
+
+  .delivery p {
+    font-family: 'Inter';
+    text-align: center;
+  }
+  
+  .footer {
+    background: #042019;
+    color: #fff;
+    padding: 2rem;
+  }
+  
+  .footerContent {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footerLinks {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .footerLinks div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footerLinks ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footerLinks ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  .socialIcons {
+    display: flex;
+    gap: 1rem;
+  }
+  

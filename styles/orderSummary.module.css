@@ -1,0 +1,21 @@
+/* components/OrderSummary.module.css */
+.orderSummary {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .checkoutButton {
+    padding: 10px 20px;
+    background-color: #004d40;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .checkoutButton:hover {
+    background-color: #00332e;
+  }
+  

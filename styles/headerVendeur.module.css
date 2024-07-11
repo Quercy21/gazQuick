@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: #004d40;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-weight: 500;
+  }
+  
+  .nav a:hover {
+    text-decoration: underline;
+  }
+  

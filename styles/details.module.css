@@ -1,0 +1,12 @@
+/* pages/Index.module.css */
+.main {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
