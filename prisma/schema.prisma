@@ -34,6 +34,7 @@ model Utilisateur {
   sexe           String
   nomUtilisateur String       @unique
   motDePasse     String
+  image          String
   role           RoleEmploye
   bouteilles     BouteilleGaz[]
   commandes      Commande[]
