@@ -32,9 +32,9 @@ export default function ConsulterListe() {
             <li><FontAwesomeIcon icon={faBoxOpen} /> Product Stock</li>
           </ul>
           <ul>
-            <li><FontAwesomeIcon icon={faList} /> Add Gaz</li>
+            <li><FontAwesomeIcon icon={faList} /> <a href='/dashboard'>Add Gaz </a></li>
             <li><FontAwesomeIcon icon={faList} /> Remove Gaz</li>
-            <li className={styles.active}><FontAwesomeIcon icon={faList} /> Consulter liste</li>
+            <li className={styles.active}><FontAwesomeIcon icon={faList} /> <a href='/consulterListe'> Consulter liste</a></li>
             <li><FontAwesomeIcon icon={faTruck} /> Add livreur</li>
             <li><FontAwesomeIcon icon={faList} /> Consulter commande</li>
           </ul>
@@ -62,6 +62,7 @@ export default function ConsulterListe() {
           <table className={styles.table}>
             <thead>
               <tr>
+                <th>Image</th>
                 <th>Référence</th>
                 <th>Poids</th>
                 <th>Marque</th>
@@ -73,6 +74,11 @@ export default function ConsulterListe() {
             <tbody>
               {bouteilles.map((bouteille) => (
                 <tr key={bouteille.id}>
+                  <td>
+                    {bouteille.imageUrl && (
+                      <img src={bouteille.imageUrl} alt={bouteille.reference} className={styles.image} />
+                    )}
+                  </td>
                   <td>{bouteille.reference}</td>
                   <td>{bouteille.poids}</td>
                   <td>{bouteille.marque}</td>

@@ -1,52 +1,46 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBell, faUserCircle, faDashboard, faBoxOpen, faList, faTruck, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/dashboard.module.css';
 
-export default function Home() {
-  const [form, setForm] = useState({
-    reference: '',
-    poids: '',
-    marque: '',
-    couleur: '',
-    qte: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  };
+export default function AddGaz() {
+  const [reference, setReference] = useState('');
+  const [poids, setPoids] = useState('');
+  const [marque, setMarque] = useState('');
+  const [couleur, setCouleur] = useState('');
+  const [qte, setQte] = useState('');
+  const [image, setImage] = useState(null);
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const res = await fetch('/api/ajoutBouteille', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(form),
-      });
-      if (res.ok) {
-        alert('Bouteille de gaz ajoutée avec succès');
-        setForm({ reference: '', poids: '', marque: '', couleur: '', qte: '' });
-      } else {
-        alert('Erreur lors de l\'ajout de la bouteille de gaz');
-      }
-    } catch (error) {
-      console.error(error);
-      alert('Erreur lors de l\'ajout de la bouteille de gaz');
+
+    const formData = new FormData();
+    formData.append('reference', reference);
+    formData.append('poids', poids);
+    formData.append('marque', marque);
+    formData.append('couleur', couleur);
+    formData.append('qte', qte);
+    formData.append('image', image);
+
+    const res = await fetch('/api/ajoutBouteille', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (res.ok) {
+      router.push('/consulterListe');
+    } else {
+      console.error('Erreur lors de l\'ajout de la bouteille de gaz');
     }
   };
 
   return (
     <div className={styles.container}>
       <Head>
-        <title>GazQuick</title>
+        <title>GazQuick - Ajouter Gaz</title>
       </Head>
       <aside className={styles.sidebar}>
         <h1 className={styles.logo}>GazQuick</h1>
@@ -59,9 +53,9 @@ export default function Home() {
             <li><FontAwesomeIcon icon={faBoxOpen} /> Product Stock</li>
           </ul>
           <ul>
-            <li className={styles.active}><FontAwesomeIcon icon={faList} /> Add Gaz</li>
+            <li className={styles.active}><FontAwesomeIcon icon={faList} /> <a href='/dashboard'>Add Gaz </a></li>
             <li><FontAwesomeIcon icon={faList} /> Remove Gaz</li>
-            <li><FontAwesomeIcon icon={faList} /> <a href='/consulterListe'> Consulter liste </a></li>
+            <li><FontAwesomeIcon icon={faList} /> <a href='/consulterListe'>Consulter liste </a></li>
             <li><FontAwesomeIcon icon={faTruck} /> Add livreur</li>
             <li><FontAwesomeIcon icon={faList} /> Consulter commande</li>
           </ul>
@@ -85,29 +79,69 @@ export default function Home() {
           </div>
         </header>
         <div className={styles.content}>
-          <h2>Add gaz</h2>
-          <form className={styles.form} onSubmit={handleSubmit}>
+          <h2>Ajouter une bouteille de gaz</h2>
+          <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.formGroup}>
-              <label>Reference*</label>
-              <input type="text" name="reference" value={form.reference} onChange={handleChange} placeholder="Reference" required />
+              <label htmlFor="reference">Référence</label>
+              <input
+                type="text"
+                id="reference"
+                value={reference}
+                onChange={(e) => setReference(e.target.value)}
+                required
+              />
             </div>
             <div className={styles.formGroup}>
-              <label>Poids*</label>
-              <input type="number" name="poids" value={form.poids} onChange={handleChange} placeholder="Poids" required />
+              <label htmlFor="poids">Poids</label>
+              <input
+                type="number"
+                id="poids"
+                value={poids}
+                onChange={(e) => setPoids(e.target.value)}
+                required
+              />
             </div>
             <div className={styles.formGroup}>
-              <label>Marque*</label>
-              <input type="text" name="marque" value={form.marque} onChange={handleChange} placeholder="Marque" required />
+              <label htmlFor="marque">Marque</label>
+              <input
+                type="text"
+                id="marque"
+                value={marque}
+                onChange={(e) => setMarque(e.target.value)}
+                required
+              />
             </div>
             <div className={styles.formGroup}>
-              <label>Couleur*</label>
-              <input type="text" name="couleur" value={form.couleur} onChange={handleChange} placeholder="Couleur" required />
+              <label htmlFor="couleur">Couleur</label>
+              <input
+                type="text"
+                id="couleur"
+                value={couleur}
+                onChange={(e) => setCouleur(e.target.value)}
+                required
+              />
             </div>
             <div className={styles.formGroup}>
-              <label>Quantité*</label>
-              <input type="number" name="qte" value={form.qte} onChange={handleChange} placeholder="Quantité" required />
+              <label htmlFor="qte">Quantité</label>
+              <input
+                type="number"
+                id="qte"
+                value={qte}
+                onChange={(e) => setQte(e.target.value)}
+                required
+              />
             </div>
-            <button type="submit">Add Gaz</button>
+            <div className={styles.formGroup}>
+              <label htmlFor="image">Image</label>
+              <input
+                type="file"
+                id="image"
+                accept="image/*"
+                onChange={(e) => setImage(e.target.files[0])}
+                required
+              />
+            </div>
+            <button type="submit" className={styles.submitButton}>Ajouter Gaz</button>
           </form>
         </div>
       </main>

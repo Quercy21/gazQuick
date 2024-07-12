@@ -34,12 +34,25 @@ model Utilisateur {
   sexe           String
   nomUtilisateur String       @unique
   motDePasse     String
-  image          String
   role           RoleEmploye
   bouteilles     BouteilleGaz[]
   commandes      Commande[]
-  //paniers        Panier[]
+  image          String?
 }
+
+// model Utilisateur {
+//   id             Int          @id @default(autoincrement())
+//   prenom         String
+//   nom            String
+//   sexe           String
+//   nomUtilisateur String       @unique
+//   motDePasse     String
+//   image          String
+//   role           RoleEmploye
+//   bouteilles     BouteilleGaz[]
+//   commandes      Commande[]
+//   //paniers        Panier[]
+// }
 
 model BouteilleGaz {
   id         Int        @id @default(autoincrement())
@@ -51,6 +64,7 @@ model BouteilleGaz {
   dateAjout  DateTime
   ajoutePar  Utilisateur @relation(fields: [ajouteParId], references: [id])
   ajouteParId Int
+  imageUrl   String?
 }
 
 model Panier {

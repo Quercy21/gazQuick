@@ -13,9 +13,9 @@
   }
   
   .logo {
-    font-size: 24px;
+    font-size: 34px;
     font-weight: bold;
-    color: #007bff;
+    color: #00676C;
   }
   
   .nav ul {
@@ -100,11 +100,18 @@
   }
   
   .table th {
-    background-color: #007bff;
+    background-color: #00676C;
     color: #fff;
   }
   
   .table td {
     background-color: #f8f9fa;
+  }
+  
+  .image {
+    width: 100px; /* Taille fixe pour les images */
+    height: 100px;
+    object-fit: cover; /* Pour s'assurer que l'image s'ajuste correctement */
+    border-radius: 8px;
   }
   
