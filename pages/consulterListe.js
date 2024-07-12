@@ -33,7 +33,6 @@ export default function ConsulterListe() {
           </ul>
           <ul>
             <li><FontAwesomeIcon icon={faList} /> <a href='/dashboard'>Add Gaz </a></li>
-            <li><FontAwesomeIcon icon={faList} /> Remove Gaz</li>
             <li className={styles.active}><FontAwesomeIcon icon={faList} /> <a href='/consulterListe'> Consulter liste</a></li>
             <li><FontAwesomeIcon icon={faTruck} /> Add livreur</li>
             <li><FontAwesomeIcon icon={faList} /> Consulter commande</li>
