@@ -24,6 +24,7 @@ export default async function handler(req, res) {
         sexe,
         nomUtilisateur,
         motDePasse: hashedPassword,
+        role: 'Client', // Définir le rôle par défaut comme client
       },
     });
 

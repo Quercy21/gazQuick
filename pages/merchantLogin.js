@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import styles from '../styles/page.module.css';
 
-export default function Home() {
+export default function MerchantLogin() {
   const [formData, setFormData] = useState({
     nomUtilisateur: '',
     password: '',
@@ -24,7 +24,7 @@ export default function Home() {
     e.preventDefault();
 
     try {
-      const res = await fetch('/api/login', {
+      const res = await fetch('/api/merchantLogin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,13 +35,13 @@ export default function Home() {
       if (res.ok) {
         const data = await res.json();
         localStorage.setItem('token', data.token);
-        router.push('/landingPage');
+        router.push('/merchantDashboard');
       } else {
         const data = await res.json();
         setError(data.message);
       }
     } catch (error) {
-      setError('An unexpected error occurred');
+      setError('Une erreur inattendue est survenue');
     }
   };
 
@@ -50,7 +50,7 @@ export default function Home() {
       <h1 className={styles.title}>GazQuick</h1>
       <div className={styles.formContainer}>
         <div className={styles.formContent}>
-          <h2 className={styles.subtitle}>Salut, connecte toi à ton compte !</h2>
+          <h2 className={styles.subtitle}>Connectez-vous à votre compte vendeur !</h2>
           {error && <p className={styles.error}>{error}</p>}
           <form onSubmit={handleSubmit}>
             <div className={styles.inputContainer}>
@@ -80,7 +80,7 @@ export default function Home() {
             <button type="submit" className={styles.submitButton}>Se connecter</button>
           </form>
           <p className={styles.signupLink}>
-            Vous n'avez pas de compte ? <a href="/signUp">Inscrivez-vous !</a>
+            Vous n'avez pas de compte ? <a href="/merchantSignUp">Inscrivez-vous !</a>
           </p>
         </div>
         <div className={styles.imageContainer}>

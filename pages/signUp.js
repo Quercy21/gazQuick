@@ -9,7 +9,7 @@ export default function SignUp() {
       <div className={styles.card}>
         <div className={styles.content}>
           {/* <h1 className={styles.title}>GazQuick</h1> */}
-          <h2 className={styles.subtitle}>Choose your account type</h2>
+          <h2 className={styles.subtitle}>Choisissez le type de compte que vous souhaitez creer</h2>
           <p className={styles.description}>
             Lorem ipsum dolor sit nulla sed interdum. Aenean purus purus facilisis lectus turpis pharetra vitae in sit.
             Maecenas ipsum ultricies e nec. Elit mauris amet vitae facilisi diam sit nibh dui.
@@ -23,7 +23,7 @@ export default function SignUp() {
                   </svg>
                 </div>
                 <div className={styles.linkText}>
-                  <h3 className={styles.linkTitle}>Utilisateur</h3>
+                  <h3 className={styles.linkTitle}>Client</h3>
                   <p className={styles.linkDescription}>Lorem ipsum dolor sit nulla sed interdum</p>
                 </div>
               </a>
@@ -36,7 +36,7 @@ export default function SignUp() {
                   </svg>
                 </div>
                 <div className={styles.linkText}>
-                  <h3 className={styles.linkTitle}>Vendeur</h3>
+                  <h3 className={styles.linkTitle}>Etablissement</h3>
                   <p className={styles.linkDescription}>Lorem ipsum dolor sit nulla sed interdum</p>
                 </div>
               </a>

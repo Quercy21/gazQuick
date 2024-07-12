@@ -56,34 +56,34 @@ export default function UserInscription() {
       <h1 className={styles.title}>GazQuick</h1>
       <div className={styles.formContainer}>
         <div className={styles.formContent}>
-          <h2 className={styles.subtitle}>Create an account</h2>
+          <h2 className={styles.subtitle}>Creer votre compte</h2>
           {error && <p className={styles.error}>{error}</p>}
           <form onSubmit={handleSubmit}>
             <div className={styles.inputContainer}>
-              <label htmlFor="prenom" className={styles.inputLabel}>First Name *</label>
-              <input type="text" id="prenom" className={styles.inputField} placeholder="First Name" value={formData.prenom} onChange={handleChange} required />
+              <label htmlFor="prenom" className={styles.inputLabel}>Prenom *</label>
+              <input type="text" id="prenom" className={styles.inputField} placeholder="Prenom" value={formData.prenom} onChange={handleChange} required />
             </div>
             <div className={styles.inputContainer}>
-              <label htmlFor="nom" className={styles.inputLabel}>Last Name *</label>
-              <input type="text" id="nom" className={styles.inputField} placeholder="Last Name" value={formData.nom} onChange={handleChange} required />
+              <label htmlFor="nom" className={styles.inputLabel}>Nom *</label>
+              <input type="text" id="nom" className={styles.inputField} placeholder="Nom" value={formData.nom} onChange={handleChange} required />
             </div>
             <div className={styles.inputContainer}>
-              <label htmlFor="sexe" className={styles.inputLabel}>Sex *</label>
-              <input type="text" id="sexe" className={styles.inputField} placeholder="Sex" value={formData.sexe} onChange={handleChange} required />
+              <label htmlFor="sexe" className={styles.inputLabel}>Sexe *</label>
+              <input type="text" id="sexe" className={styles.inputField} placeholder="Sexe" value={formData.sexe} onChange={handleChange} required />
             </div>
             <div className={styles.inputContainer}>
-              <label htmlFor="nomUtilisateur" className={styles.inputLabel}>Username *</label>
-              <input type="text" id="nomUtilisateur" className={styles.inputField} placeholder="Username" value={formData.nomUtilisateur} onChange={handleChange} required />
+              <label htmlFor="nomUtilisateur" className={styles.inputLabel}>Nom d'utilisateur *</label>
+              <input type="text" id="nomUtilisateur" className={styles.inputField} placeholder="Nom d'utilisateur" value={formData.nomUtilisateur} onChange={handleChange} required />
             </div>
             <div className={styles.inputContainer}>
-              <label htmlFor="motDePasse" className={styles.inputLabel}>Password *</label>
-              <input type="password" id="motDePasse" className={styles.inputField} placeholder="Password" value={formData.motDePasse} onChange={handleChange} required />
+              <label htmlFor="motDePasse" className={styles.inputLabel}>Mot De Passe *</label>
+              <input type="password" id="motDePasse" className={styles.inputField} placeholder="Mot De Passe" value={formData.motDePasse} onChange={handleChange} required />
             </div>
             <div className={styles.inputContainer}>
-              <label htmlFor="confirmPassword" className={styles.inputLabel}>Confirm Password *</label>
-              <input type="password" id="confirmPassword" className={styles.inputField} placeholder="Confirm Password" value={formData.confirmPassword} onChange={handleChange} required />
+              <label htmlFor="confirmPassword" className={styles.inputLabel}>Confirme Mot De Passe *</label>
+              <input type="password" id="confirmPassword" className={styles.inputField} placeholder="Confirme Mot De Passe" value={formData.confirmPassword} onChange={handleChange} required />
             </div>
-            <button type="submit" className={styles.submitButton}>Sign Up</button>
+            <button type="submit" className={styles.submitButton}>S'inscrire</button>
           </form>
         </div>
         <div className={styles.imageContainer}>

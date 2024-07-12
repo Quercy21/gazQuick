@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   const { nomUtilisateur, password } = req.body;
 
   if (!nomUtilisateur || !password) {
-    return res.status(400).json({ message: 'All fields are required' });
+    return res.status(400).json({ message: 'Tous les champs sont requis' });
   }
 
   try {
@@ -22,23 +22,23 @@ export default async function handler(req, res) {
       },
     });
 
-    if (!user) {
-      return res.status(401).json({ message: 'Invalid username or password' });
+    if (!user || user.role !== 'vendeur') {
+      return res.status(401).json({ message: 'Nom d\'utilisateur ou mot de passe invalide' });
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.motDePasse);
 
     if (!isPasswordValid) {
-      return res.status(401).json({ message: 'Invalid username or password' });
+      return res.status(401).json({ message: 'Nom d\'utilisateur ou mot de passe invalide' });
     }
 
-    const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ userId: user.id, role: user.role }, process.env.JWT_SECRET, {
       expiresIn: '1h',
     });
 
     res.status(200).json({ token });
   } catch (error) {
-    res.status(500).json({ message: 'Internal server error' });
+    res.status(500).json({ message: 'Erreur interne du serveur' });
   } finally {
     await prisma.$disconnect();
   }
