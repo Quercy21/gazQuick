@@ -52,7 +52,7 @@ const Cart = () => {
       <div className={styles.cartSummary}>
         <h2>Résumé de votre commande :</h2>
         <p>{totalPrice} FCFA</p>
-        <button className={styles.checkoutButton}>Valider le panier</button>
+        <button className={styles.checkoutButton}> <a href='/checkout' >Valider le panier</a></button>
       </div>
     </div>
   );

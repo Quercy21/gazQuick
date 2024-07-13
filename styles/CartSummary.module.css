@@ -1,0 +1,22 @@
+.summary {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 5px;
+    /* text-align: center; */
+  }
+
+  .summary h2{
+    color: #00676C;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .summary button {
+    padding: 10px 20px;
+    background-color: #00676C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

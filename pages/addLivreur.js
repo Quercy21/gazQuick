@@ -5,42 +5,39 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBell, faUserCircle, faDashboard, faBoxOpen, faList, faTruck, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/dashboard.module.css';
 
-export default function AddGaz() {
-  const [reference, setReference] = useState('');
-  const [poids, setPoids] = useState('');
-  const [marque, setMarque] = useState('');
-  const [couleur, setCouleur] = useState('');
-  const [qte, setQte] = useState('');
-  const [image, setImage] = useState(null);
+export default function AddLivreur() {
+  const [nom, setNom] = useState('');
+  const [prenom, setPrenom] = useState('');
+  const [sexe, setSexe] = useState('');
+  const [nomUtilisateur, setNomUtilisateur] = useState('');
+  const [motDePasse, setMotDePasse] = useState('');
+//   const [phone, setPhone] = useState('');
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append('reference', reference);
-    formData.append('poids', poids);
-    formData.append('marque', marque);
-    formData.append('couleur', couleur);
-    formData.append('qte', qte);
-    formData.append('image', image);
+    const livreurData = { nom, prenom, sexe, nomUtilisateur, motDePasse };
 
-    const res = await fetch('/api/ajoutBouteille', {
+    const res = await fetch('/api/ajoutLivreur', {
       method: 'POST',
-      body: formData,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(livreurData),
     });
 
     if (res.ok) {
-      router.push('/consulterListe');
+      router.push('/listeLivreur');
     } else {
-      console.error('Erreur lors de l\'ajout de la bouteille de gaz');
+      console.error('Erreur lors de l\'ajout du livreur');
     }
   };
 
   return (
     <div className={styles.container}>
       <Head>
-        <title>GazQuick - Ajouter Gaz</title>
+        <title>GazQuick - Ajouter Livreur</title>
       </Head>
       <aside className={styles.sidebar}>
         <h1 className={styles.logo}>GazQuick</h1>
@@ -55,7 +52,7 @@ export default function AddGaz() {
           <ul>
             <li className={styles.active}><FontAwesomeIcon icon={faList} /> <a href='/dashboard'>Add Gaz </a></li>
             <li><FontAwesomeIcon icon={faList} /> <a href='/consulterListe'>Consulter liste </a></li>
-            <li><FontAwesomeIcon icon={faTruck} />  <a href='/addLivreur'>Add Livreur</a></li>
+            <li><FontAwesomeIcon icon={faTruck} /> Add livreur</li>
             <li><FontAwesomeIcon icon={faList} />  <a href='/listeLivreur'>Liste livreur</a></li>
             <li><FontAwesomeIcon icon={faList} /> Consulter commande</li>
           </ul>
@@ -79,69 +76,69 @@ export default function AddGaz() {
           </div>
         </header>
         <div className={styles.content}>
-          <h2>Ajouter une bouteille de gaz</h2>
+          <h2>Ajouter un livreur</h2>
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.formGroup}>
-              <label htmlFor="reference">Référence</label>
+              <label htmlFor="nom">Nom</label>
               <input
                 type="text"
-                id="reference"
-                value={reference}
-                onChange={(e) => setReference(e.target.value)}
+                id="nom"
+                value={nom}
+                onChange={(e) => setNom(e.target.value)}
                 required
               />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="poids">Poids</label>
-              <input
-                type="number"
-                id="poids"
-                value={poids}
-                onChange={(e) => setPoids(e.target.value)}
-                required
-              />
-            </div>
-            <div className={styles.formGroup}>
-              <label htmlFor="marque">Marque</label>
+              <label htmlFor="prenom">Prénom</label>
               <input
                 type="text"
-                id="marque"
-                value={marque}
-                onChange={(e) => setMarque(e.target.value)}
+                id="prenom"
+                value={prenom}
+                onChange={(e) => setPrenom(e.target.value)}
                 required
               />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="couleur">Couleur</label>
+              <label htmlFor="sexe">Sexe</label>
               <input
                 type="text"
-                id="couleur"
-                value={couleur}
-                onChange={(e) => setCouleur(e.target.value)}
+                id="sexe"
+                value={sexe}
+                onChange={(e) => setSexe(e.target.value)}
                 required
               />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="qte">Quantité</label>
+              <label htmlFor="nomUtilisateur">Nom d'utilisateur</label>
               <input
-                type="number"
-                id="qte"
-                value={qte}
-                onChange={(e) => setQte(e.target.value)}
+                type="text"
+                id="nomUtilisateur"
+                value={nomUtilisateur}
+                onChange={(e) => setNomUtilisateur(e.target.value)}
                 required
               />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="image">Image</label>
+              <label htmlFor="motDePasse">Mot de passe</label>
               <input
-                type="file"
-                id="image"
-                accept="image/*"
-                onChange={(e) => setImage(e.target.files[0])}
+                type="password"
+                id="motDePasse"
+                value={motDePasse}
+                onChange={(e) => setMotDePasse(e.target.value)}
                 required
               />
             </div>
-            <button type="submit" className={styles.submitButton}>Ajouter Gaz</button>
+            {/* <div className={styles.formGroup}>
+              <label htmlFor="phone">Téléphone</label>
+              <input
+                type="text"
+                id="phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+              />
+            </div> */}
+            <button type="submit" className={styles.submitButton}>Ajouter Livreur</button>
           </form>
         </div>
       </main>

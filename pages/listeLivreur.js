@@ -4,22 +4,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBell, faUserCircle, faDashboard, faBoxOpen, faList, faTruck, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/consulterListe.module.css';
 
-export default function ConsulterListe() {
-  const [bouteilles, setBouteilles] = useState([]);
+export default function ListeLivreur() {
+  const [livreurs, setLivreurs] = useState([]);
 
   useEffect(() => {
-    async function fetchBouteilles() {
-      const res = await fetch('/api/ajoutBouteille');
+    async function fetchLivreurs() {
+      const res = await fetch('/api/listeLivreur');
       const data = await res.json();
-      setBouteilles(data);
+      setLivreurs(data);
     }
-    fetchBouteilles();
+    fetchLivreurs();
   }, []);
 
   return (
     <div className={styles.container}>
       <Head>
-        <title>GazQuick - Consulter Liste</title>
+        <title>GazQuick - Liste Livreur</title>
       </Head>
       <aside className={styles.sidebar}>
         <h1 className={styles.logo}>GazQuick</h1>
@@ -33,9 +33,9 @@ export default function ConsulterListe() {
           </ul>
           <ul>
             <li><FontAwesomeIcon icon={faList} /> <a href='/dashboard'>Add Gaz </a></li>
-            <li className={styles.active}><FontAwesomeIcon icon={faList} /> <a href='/consulterListe'> Consulter liste</a></li>
+            <li><FontAwesomeIcon icon={faList} /> <a href='/consulterListe'> Consulter liste</a></li>
             <li><FontAwesomeIcon icon={faTruck} /> <a href='/addLivreur'>Add Livreur</a></li>
-            <li><FontAwesomeIcon icon={faList} />  <a href='/listeLivreur'>Liste livreur</a></li>
+            <li className={styles.active}><FontAwesomeIcon icon={faList} /> Liste livreur</li>
             <li><FontAwesomeIcon icon={faList} /> Consulter commande</li>
           </ul>
         </nav>
@@ -58,33 +58,25 @@ export default function ConsulterListe() {
           </div>
         </header>
         <div className={styles.content}>
-          <h2>Liste des bouteilles de gaz</h2>
+          <h2>Liste des livreurs</h2>
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>Image</th>
-                <th>Référence</th>
-                <th>Poids</th>
-                <th>Marque</th>
-                <th>Couleur</th>
-                <th>Quantité</th>
-                <th>Date d'ajout</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Sexe</th>
+                <th>Nom d'utilisateur</th>
+                <th>Téléphone</th>
               </tr>
             </thead>
             <tbody>
-              {bouteilles.map((bouteille) => (
-                <tr key={bouteille.id}>
-                  <td>
-                    {bouteille.imageUrl && (
-                      <img src={bouteille.imageUrl} alt={bouteille.reference} className={styles.image} />
-                    )}
-                  </td>
-                  <td>{bouteille.reference}</td>
-                  <td>{bouteille.poids}</td>
-                  <td>{bouteille.marque}</td>
-                  <td>{bouteille.couleur}</td>
-                  <td>{bouteille.qte}</td>
-                  <td>{new Date(bouteille.dateAjout).toLocaleString()}</td>
+              {livreurs.map((livreur) => (
+                <tr key={livreur.id}>
+                  <td>{livreur.nom}</td>
+                  <td>{livreur.prenom}</td>
+                  <td>{livreur.sexe}</td>
+                  <td>{livreur.nomUtilisateur}</td>
+                  <td>{livreur.phone}</td>
                 </tr>
               ))}
             </tbody>

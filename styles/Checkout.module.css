@@ -1,0 +1,48 @@
+.checkout {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .cartDetails, .paymentMethods {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .cartItems {
+    display: grid;
+    gap: 10px;
+  }
+  
+  .cartItem {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .cartImage {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .paymentMethods label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .paymentMethods input {
+    margin-right: 10px;
+  }
+
+  .paymentMethods h2{
+    color: #00676C;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .cartDetails h2{
+    color: #00676C;
+    font-weight: bold;
+    font-size: 20px;
+  }
