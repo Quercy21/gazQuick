@@ -7,9 +7,9 @@ export default function Header() {
       <div className={styles.logo}>GazQuick</div>
       <nav>
         <a href="/landingPage" className={styles.link}>Home</a>
-        <a href="/landingPage" className={styles.link}>Shop</a>
+        <a href="/details" className={styles.link}>Shop</a>
         <a href="/landingPage" className={styles.link}>About</a>
-        <a href="/landingPage" className={styles.link}>Blog</a>
+        <a href="/panier" className={styles.link}>Panier</a>
         <a href="/landingPage" className={styles.link}>Contact</a>
         <a href="/landingPage" className={styles.link}>Pages</a>
       </nav>

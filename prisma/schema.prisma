@@ -40,20 +40,6 @@ model Utilisateur {
   image          String?
 }
 
-// model Utilisateur {
-//   id             Int          @id @default(autoincrement())
-//   prenom         String
-//   nom            String
-//   sexe           String
-//   nomUtilisateur String       @unique
-//   motDePasse     String
-//   image          String
-//   role           RoleEmploye
-//   bouteilles     BouteilleGaz[]
-//   commandes      Commande[]
-//   //paniers        Panier[]
-// }
-
 model BouteilleGaz {
   id         Int        @id @default(autoincrement())
   reference  String
@@ -73,9 +59,14 @@ model Panier {
 }
 
 model Article {
-  id     Int  @id @default(autoincrement())
-  qte    Int
-  panier Panier @relation(fields: [panierId], references: [id])
+  id       Int      @id @default(autoincrement())
+  qte      Int
+  reference String
+  poids    Float
+  marque   String
+  prix     Float
+  imageUrl String?
+  panier   Panier   @relation(fields: [panierId], references: [id])
   panierId Int
 }
 
