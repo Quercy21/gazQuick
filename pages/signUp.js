@@ -24,7 +24,7 @@ export default function SignUp() {
                 </div>
                 <div className={styles.linkText}>
                   <h3 className={styles.linkTitle}>Client</h3>
-                  <p className={styles.linkDescription}>Lorem ipsum dolor sit nulla sed interdum</p>
+                  <p className={styles.linkDescription}>Inscrivez vous et achetez vos bouteilles de gaz</p>
                 </div>
               </a>
             </Link>
@@ -36,8 +36,8 @@ export default function SignUp() {
                   </svg>
                 </div>
                 <div className={styles.linkText}>
-                  <h3 className={styles.linkTitle}>Etablissement</h3>
-                  <p className={styles.linkDescription}>Lorem ipsum dolor sit nulla sed interdum</p>
+                  <h3 className={styles.linkTitle}>Vendeur</h3>
+                  <p className={styles.linkDescription}>Inscrivez vous en tant que vendeur, et vendez vos bouteilles de gaz avec gazQuick</p>
                 </div>
               </a>
             </Link>

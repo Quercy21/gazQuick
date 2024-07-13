@@ -17,7 +17,7 @@ export default async (req, res) => {
 
       await prisma.article.create({
         data: {
-          qte: 1, // Quantité par défaut, peut être modifié selon votre logique
+          qte: 1, 
           panierId: panier.id,
           reference,
           poids,
