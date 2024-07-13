@@ -36,7 +36,7 @@ export default function ListeLivreur() {
             <li><FontAwesomeIcon icon={faList} /> <a href='/consulterListe'> Consulter liste</a></li>
             <li><FontAwesomeIcon icon={faTruck} /> <a href='/addLivreur'>Add Livreur</a></li>
             <li className={styles.active}><FontAwesomeIcon icon={faList} /> Liste livreur</li>
-            <li><FontAwesomeIcon icon={faList} /> Consulter commande</li>
+            <li><FontAwesomeIcon icon={faList} /> <a href='/consulterCommande'>Consulter commande</a></li>
           </ul>
         </nav>
         <nav className={styles.bottomNav}>

@@ -54,7 +54,7 @@ export default function AddLivreur() {
             <li><FontAwesomeIcon icon={faList} /> <a href='/consulterListe'>Consulter liste </a></li>
             <li><FontAwesomeIcon icon={faTruck} /> Add livreur</li>
             <li><FontAwesomeIcon icon={faList} />  <a href='/listeLivreur'>Liste livreur</a></li>
-            <li><FontAwesomeIcon icon={faList} /> Consulter commande</li>
+            <li><FontAwesomeIcon icon={faList} /> <a href='/consulterCommandes'>Consulter commande</a></li>
           </ul>
         </nav>
         <nav className={styles.bottomNav}>

@@ -57,7 +57,7 @@ export default function AddGaz() {
             <li><FontAwesomeIcon icon={faList} /> <a href='/consulterListe'>Consulter liste </a></li>
             <li><FontAwesomeIcon icon={faTruck} />  <a href='/addLivreur'>Add Livreur</a></li>
             <li><FontAwesomeIcon icon={faList} />  <a href='/listeLivreur'>Liste livreur</a></li>
-            <li><FontAwesomeIcon icon={faList} /> Consulter commande</li>
+            <li><FontAwesomeIcon icon={faList} /> <a href='/consulterCommande'>Consulter commande</a></li>
           </ul>
         </nav>
         <nav className={styles.bottomNav}>

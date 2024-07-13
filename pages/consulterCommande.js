@@ -4,22 +4,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBell, faUserCircle, faDashboard, faBoxOpen, faList, faTruck, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/consulterListe.module.css';
 
-export default function ConsulterListe() {
-  const [bouteilles, setBouteilles] = useState([]);
+export default function ConsulterCommandes() {
+  const [commandes, setCommandes] = useState([]);
 
   useEffect(() => {
-    async function fetchBouteilles() {
-      const res = await fetch('/api/ajoutBouteille');
+    async function fetchCommandes() {
+      const res = await fetch('/api/listeCommandes');
       const data = await res.json();
-      setBouteilles(data);
+      setCommandes(data);
     }
-    fetchBouteilles();
+    fetchCommandes();
   }, []);
 
   return (
     <div className={styles.container}>
       <Head>
-        <title>GazQuick - Consulter Liste</title>
+        <title>GazQuick - Liste Commandes</title>
       </Head>
       <aside className={styles.sidebar}>
         <h1 className={styles.logo}>GazQuick</h1>
@@ -33,11 +33,10 @@ export default function ConsulterListe() {
           </ul>
           <ul>
             <li><FontAwesomeIcon icon={faList} /> <a href='/dashboard'>Add Gaz </a></li>
-            <li className={styles.active}><FontAwesomeIcon icon={faList} /> <a href='/consulterListe'> Consulter liste</a></li>
+            <li><FontAwesomeIcon icon={faList} /> <a href='/consulterListe'> Consulter liste</a></li>
             <li><FontAwesomeIcon icon={faTruck} /> <a href='/addLivreur'>Add Livreur</a></li>
-            <li><FontAwesomeIcon icon={faList} />  <a href='/listeLivreur'>Liste livreur</a></li>
-            <li><FontAwesomeIcon icon={faList} /> <a href='/consulterCommande'>Consulter commande</a></li>
-
+            <li><FontAwesomeIcon icon={faList} /> <a href='/listeLivreur'>Liste livreur</a></li>
+            <li className={styles.active}><FontAwesomeIcon icon={faList} /> Consulter commande</li>
           </ul>
         </nav>
         <nav className={styles.bottomNav}>
@@ -59,33 +58,27 @@ export default function ConsulterListe() {
           </div>
         </header>
         <div className={styles.content}>
-          <h2>Liste des bouteilles de gaz</h2>
+          <h2>Liste des commandes</h2>
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>Image</th>
-                <th>Référence</th>
-                <th>Poids</th>
-                <th>Marque</th>
-                <th>Couleur</th>
+                <th>ID Commande</th>
+                <th>Date</th>
+                <th>Client</th>
+                <th>Produit</th>
                 <th>Quantité</th>
-                <th>Date d'ajout</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
-              {bouteilles.map((bouteille) => (
-                <tr key={bouteille.id}>
-                  <td>
-                    {bouteille.imageUrl && (
-                      <img src={bouteille.imageUrl} alt={bouteille.reference} className={styles.image} />
-                    )}
-                  </td>
-                  <td>{bouteille.reference}</td>
-                  <td>{bouteille.poids}</td>
-                  <td>{bouteille.marque}</td>
-                  <td>{bouteille.couleur}</td>
-                  <td>{bouteille.qte}</td>
-                  <td>{new Date(bouteille.dateAjout).toLocaleString()}</td>
+              {commandes.map((commande) => (
+                <tr key={commande.id}>
+                  <td>{commande.id}</td>
+                  <td>{new Date(commande.date).toLocaleString()}</td>
+                  <td>{commande.utilisateur.nom} {commande.utilisateur.prenom}</td>
+                  <td>{commande.produit}</td>
+                  <td>{commande.quantite}</td>
+                  <td>{commande.status}</td>
                 </tr>
               ))}
             </tbody>
