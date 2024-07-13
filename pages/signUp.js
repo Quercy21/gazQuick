@@ -10,10 +10,10 @@ export default function SignUp() {
         <div className={styles.content}>
           {/* <h1 className={styles.title}>GazQuick</h1> */}
           <h2 className={styles.subtitle}>Choisissez le type de compte que vous souhaitez creer</h2>
-          <p className={styles.description}>
+          {/* <p className={styles.description}>
             Lorem ipsum dolor sit nulla sed interdum. Aenean purus purus facilisis lectus turpis pharetra vitae in sit.
             Maecenas ipsum ultricies e nec. Elit mauris amet vitae facilisi diam sit nibh dui.
-          </p>
+          </p> */}
           <div className={styles.links}>
             <Link href="/UserInscription" legacyBehavior>
               <a className={styles.link}>

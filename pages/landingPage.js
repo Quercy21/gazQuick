@@ -25,11 +25,11 @@ export default function landingPage() {
         <nav className={styles.nav}>
           <div className={styles.logo}>GazQuick</div>
           <ul className={styles.navLinks}>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Shop</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Shop</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/panier">panier</a></li>
+            <li><a href="/">Contact</a></li>
           </ul>
           <div className={styles.navIcons}>
             <a href="#"><img src="/search-icon.png" /></a>
@@ -42,9 +42,9 @@ export default function landingPage() {
       <main className={styles.main}>
         <section className={styles.hero}>
           <div className={styles.heroText}>
-            <h1>Lorem ipsum dolor sit amet consectetur. Magna faucibus cras</h1>
-            <p>Lorem ipsum dolor sit amet consectetur. Magna faucibus cras maecenas massa velit bibendum. Nisi nunc mi augue pulvinar non convallis.</p>
-            <button className={styles.heroButton}> <a href='/details' > Get started</a></button>
+            <h1>Livraison rapide de gaz à votre porte</h1>
+            <p>Commandez votre gaz en ligne et recevez-le en quelques minutes. Fiable et pratique, partout et à tout moment</p>
+            <button className={styles.heroButton}> <a href='/details' > Commencez maintenant</a></button>
           </div>
           <div className={styles.heroImage}>
             <Image src="/A.png" alt="Gas Illustration" width={400} height={300} />
@@ -62,7 +62,7 @@ export default function landingPage() {
         </section>
 
         <div>
-          <h2 className={styles.titre}>Catégories 1</h2>
+          <h2 className={styles.titre}>Cliquez sur une bouteille pour en savoir plus</h2>
           <div className={styles.conteneur}>
             {images.map((imageUrl, index) => (
               <Carte key={index} imageUrl={imageUrl} />
@@ -71,7 +71,16 @@ export default function landingPage() {
         </div>
 
         <div>
-          <h2 className={styles.titre}>Catégories 2</h2>
+          {/* <h2 className={styles.titre}>Catégories 2</h2> */}
+          <div className={styles.conteneur}>
+            {images.map((imageUrl, index) => (
+              <Carte key={index} imageUrl={imageUrl} />
+            ))}
+          </div>
+        </div>
+
+        <div>
+          {/* <h2 className={styles.titre}>Catégories 2</h2> */}
           <div className={styles.conteneur}>
             {images.map((imageUrl, index) => (
               <Carte key={index} imageUrl={imageUrl} />

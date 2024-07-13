@@ -54,7 +54,7 @@ export default function ProductDetail() {
           </button>
         </div>
       </div>
-      <div className={styles.similarProducts}>
+      {/* <div className={styles.similarProducts}>
         <h2>Article Similaire</h2>
         <div className={styles.cards}>
           {Array.from({ length: 3 }).map((_, index) => (
@@ -63,7 +63,7 @@ export default function ProductDetail() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

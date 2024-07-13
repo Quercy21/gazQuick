@@ -135,6 +135,9 @@ export default function MerchantInscription() {
             </div>
             <button type="submit" className={styles.submitButton}>S'inscrire</button>
           </form>
+          <p className={styles.signupLink}>
+            Vous avez déjà un compte ? <a href="/merchantLogin">Connectez-vous !</a>
+          </p>
         </div>
         <div className={styles.imageContainer}>
           <Image
